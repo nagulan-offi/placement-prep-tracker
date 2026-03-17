@@ -42,6 +42,14 @@ No existing app matched my exact daily schedule and roadmap. So I built one — 
 
 ---
 
+## Certifications
+
+| Certification | Issuer | Status |
+|--------------|--------|--------|
+| AWS Solutions Architect Associate | Amazon Web Services | ✅ Certified |
+
+---
+
 ## Features
 
 **Daily Tracker**
@@ -139,7 +147,7 @@ To deploy your own instance:
 |-------|----------|-------|
 | Phase 1 | March – July 2026 | DSA 250 problems + CS Fundamentals + 2 Projects |
 | On-Campus | August 2026 | TCS, Infosys, LTIMindtree, Hexaware |
-| Phase 2 | Sep – Dec 2026 | Docker, Terraform, Kubernetes, AWS SAA, CI/CD, MLOps |
+| Phase 2 | Sep – Dec 2026 | Docker, Terraform, Kubernetes, CI/CD, MLOps (AWS SAA already done) |
 | Off-Campus | Jan – Mar 2027 | Product companies, 10–18 LPA target |
 
 ---
