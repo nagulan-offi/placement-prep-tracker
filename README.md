@@ -7,9 +7,9 @@
 ![Firebase](https://img.shields.io/badge/Firebase-Firestore-FFB830?style=for-the-badge&logo=firebase&logoColor=black)
 ![Hosted](https://img.shields.io/badge/Hosted-Firebase%20Hosting-FF6B6B?style=for-the-badge&logo=firebase)
 
-**A full-stack personal placement preparation tracker — built to track DSA, LeetCode, Apna College modules, CS fundamentals, and daily routines across all devices in real time.**
+**A full-stack personal placement preparation tracker — built to track DSA progress, LeetCode problems, Apna College modules, CS fundamentals, and daily routines. Syncs in real time across all devices.**
 
-### [Live App](https://prep-tracker-2026-d315e.web.app)
+### [Live App →](https://prep-tracker-2026-d315e.web.app)
 
 </div>
 
@@ -17,14 +17,15 @@
 
 ## Why I Built This
 
-I am a 3rd year CS student targeting placements in August 2026. I needed a system to track:
+I am a 3rd year IT student at K. Ramakrishnan College of Technology targeting placements in August 2026. I needed a system to track:
+
 - Daily preparation across a 3-hour commute + night coding schedule
 - Apna College DSA course progress (52 modules, starting from Module 19)
 - LeetCode problems solved with difficulty and topic tagging
-- CS fundamentals study — DBMS, OS, Networks, OOPs
+- CS fundamentals — DBMS, OS, Networks, OOPs
 - Full calendar history showing every day I studied
 
-No existing app matched my exact schedule and roadmap. So I built one — with a real database that syncs across my phone on the morning bus and my laptop at night.
+No existing app matched my exact daily schedule and roadmap. So I built one — with a real database that syncs across my phone on the morning bus and my laptop at night. Built for personal use.
 
 ---
 
@@ -32,10 +33,10 @@ No existing app matched my exact schedule and roadmap. So I built one — with a
 
 | Layer | Technology | Purpose |
 |-------|-----------|---------|
-| Frontend | HTML + CSS + Vanilla JS | Single file, no build tools, instant deploy |
+| Frontend | HTML + CSS + Vanilla JavaScript | Single file, no build tools, instant deploy |
 | Auth | Firebase Authentication | Email/password login with secure JWT tokens |
 | Database | Cloud Firestore | Real-time sync across all devices |
-| Hosting | Firebase Hosting | Free global CDN, custom domain ready |
+| Hosting | Firebase Hosting | Free global CDN |
 
 **Zero frameworks. Zero npm dependencies. One HTML file. 74KB total.**
 
@@ -44,13 +45,13 @@ No existing app matched my exact schedule and roadmap. So I built one — with a
 ## Features
 
 **Daily Tracker**
-- Time-slot schedule matching my real day: morning bus, college, evening bus, internship, night coding
-- Every task stored by actual date — Week 1 data never overwrites Week 2
+- Time-slot schedule matching my real day: morning bus, college, evening bus, cloud internship, night coding
+- Every task stored by actual calendar date — Week 1 data never overwrites Week 2
 - Add, edit, delete, reorder tasks in any slot
-- Per-day notes field
+- Per-day notes field for writing what you learned
 
 **LeetCode Log**
-- Log every problem: name, difficulty, topic
+- Log every problem with name, difficulty, topic
 - Filter by Easy / Medium / Hard / solved / unsolved
 - Running totals updating in real time
 
@@ -62,15 +63,15 @@ No existing app matched my exact schedule and roadmap. So I built one — with a
 **Calendar History**
 - Full monthly calendar with colour-coded study history
 - Green = all tasks done, Amber = partial, Empty = not started
-- Click any past date to see exactly what you did
+- Click any past date to review exactly what you did that day
 
 **Streak System**
 - Current streak and all-time best streak
-- Calculated from real Firestore history across all devices
+- Calculated from real Firestore history — accurate across all devices
 
 **Cross-Device Sync**
-- Tick a task on phone — shows done on laptop instantly
-- Same data everywhere, same account
+- Tick a task on phone — shows on laptop instantly
+- Same Firestore database, same account, everywhere
 
 ---
 
@@ -79,19 +80,19 @@ No existing app matched my exact schedule and roadmap. So I built one — with a
 ```
 Browser (any device)
     |
-    |-- Firebase Auth SDK       (verifies user on every request)
-    |-- Firestore SDK           (reads and writes user data)
-    |-- Firebase Hosting        (serves the HTML globally)
+    |-- Firebase Auth SDK       verifies user on every request
+    |-- Firestore SDK           reads and writes user data
+    |-- Firebase Hosting        serves the HTML globally via CDN
 
 Firestore data structure:
 users/
   {userId}/
-    tasks/{dateKey}       -- task completion per day
-    notes/{dateKey}       -- day notes
-    lc/{problemId}        -- LeetCode problems
-    modules/progress      -- current module + done state
-    slots/{type}          -- customised task templates
-    slotOpen/{key}        -- slot open state per day
+    tasks/{dateKey}       task completion per day
+    notes/{dateKey}       day notes
+    lc/{problemId}        LeetCode problems
+    modules/progress      current module + done state
+    slots/{type}          customised task templates
+    slotOpen/{key}        slot open state per day
 ```
 
 ---
@@ -117,19 +118,18 @@ Every user can only access their own data. Unauthenticated requests are rejected
 ## Run Your Own Instance
 
 ```bash
-git clone https://github.com/yourusername/prep-tracker.git
+git clone https://github.com/nagulan-offi/prep-tracker.git
 cd prep-tracker
-
-# No build step — open directly
-open public/index.html
 ```
 
-To deploy:
-1. Create Firebase project at console.firebase.google.com
+No build step needed — open `public/index.html` directly in any browser.
+
+To deploy your own instance:
+1. Create a Firebase project at console.firebase.google.com
 2. Enable Email/Password Authentication
-3. Create Firestore database
-4. Replace `firebaseConfig` in `index.html` with your config
-5. `firebase deploy`
+3. Create a Firestore database in test mode
+4. Replace `firebaseConfig` in `index.html` with your config values
+5. Run `firebase deploy`
 
 ---
 
@@ -146,13 +146,13 @@ To deploy:
 
 ## Future Plans
 
-- [ ] Weekly progress chart — problems solved per week graph
+- [ ] Weekly progress chart — problems solved per week
 - [ ] Export monthly report as PDF
-- [ ] Daily reminder push notifications
 - [ ] GitHub contribution-style yearly heatmap
+- [ ] Daily reminder push notifications
 
 ---
 
 <div align="center">
-<sub>Built by Nagulan | 3rd Year CS | Graduating 2027 | Cloud + AI/ML</sub>
+<sub>Built by Nagulan | 3rd Year IT | K. Ramakrishnan College of Technology | Thanjavur</sub>
 </div>
